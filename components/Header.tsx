@@ -12,7 +12,7 @@ export default function Header() {
       <div className="mx-4 md:mx-auto flex h-14 max-w-4xl w-auto md:w-full items-center justify-between px-4 sm:px-8 border-x border-border/40">
         <div className="flex items-center gap-6 md:gap-10">
           <a href="/" className="flex items-center space-x-2">
-            <span className="font-sans font-bold inline-block text-lg">
+            <span className="font-sans font-medium inline-block text-lg">
               Personal Lab
             </span>
           </a>
