@@ -3,9 +3,12 @@
 import { Moon, Sun } from "lucide-react"
 import { useTheme } from "next-themes"
 import { Button } from "@/components/ui/button"
+import { useSound } from "@/lib/sound-engine";
+import { select001Sound } from "@/lib/select-001";
 
 export default function Header() {
   const { setTheme, resolvedTheme } = useTheme()
+  const [playSelect] = useSound(select001Sound, { volume: 0.5 });
 
   return (
     <header className="relative z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -22,7 +25,10 @@ export default function Header() {
           <Button
             variant="outline"
             size="icon"
-            onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
+            onClick={() => {
+              playSelect();
+              setTheme(resolvedTheme === "dark" ? "light" : "dark");
+            }}
             aria-label="Toggle theme"
           >
             <Sun className="h-[1.2rem] w-[1.2rem] scale-100 rotate-0 transition-all dark:scale-0 dark:-rotate-90" />

@@ -3,6 +3,7 @@
 import Header from "@/components/Header"
 import { useState } from "react"
 import ComponentList from "@/components/ComponentList"
+import IsometricLogo from "@/components/IsometricLogo"
 
 export default function Home() {
   const [isActive, setIsActive] = useState("list")
@@ -15,6 +16,12 @@ export default function Home() {
           <p className="text-gray-400 pb-2 text-sm sm:text-base">Lab where I experiment with my UI ideas</p>
         </div>
         <div className="w-screen relative left-1/2 -translate-x-1/2 border-t border-border/40" />
+        <div className="w-full md:w-[112%] md:-mx-[6%] aspect-[1113/441] flex items-center justify-center pt-4 pb-0">
+          <IsometricLogo className="translate-x-6 sm:translate-x-12 max-w-[85%] sm:max-w-[80%]" />
+        </div>
+
+        <DiagonalLines />
+
         <div className="px-4 sm:px-8 py-4">
           <h1 className="text-xl sm:text-2xl font-semibold">Crafted with ❤️ for the community</h1>
         </div>
@@ -37,6 +44,14 @@ export default function Home() {
         <div className="w-screen relative left-1/2 -translate-x-1/2 border-t border-border/40" />
         <ComponentList />
       </main>
+    </div>
+  )
+}
+
+const DiagonalLines = () => {
+  return (
+    <div>
+
     </div>
   )
 }
