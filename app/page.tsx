@@ -4,6 +4,7 @@ import Header from "@/components/Header"
 import { useState } from "react"
 import ComponentList from "@/components/ComponentList"
 import IsometricLogo from "@/components/IsometricLogo"
+import { Pipette } from "lucide-react"
 
 export default function Home() {
   const [isActive, setIsActive] = useState("list")
@@ -12,7 +13,8 @@ export default function Home() {
     <div className="flex flex-col min-h-screen">
       <Header />
       <main className="flex-1 max-w-4xl w-auto md:w-full mx-4 md:mx-auto border-x border-border/40">
-        <div className="pt-8 sm:pt-12 px-4 sm:px-8">
+        <div className="flex gap-2 pt-8 sm:pt-12 px-4 sm:px-8">
+          <Pipette className="w-5 h-5 text-primary" />
           <p className="text-gray-400 pb-2 text-sm sm:text-base">Lab where I experiment with my UI ideas</p>
         </div>
         <div className="w-screen relative left-1/2 -translate-x-1/2 border-t border-border/40" />

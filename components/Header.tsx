@@ -20,7 +20,7 @@ export default function Header() {
             </span>
           </a>
         </div>
-        
+
         <div className="flex items-center space-x-2">
           <Button
             variant="outline"
