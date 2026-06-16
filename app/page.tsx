@@ -4,7 +4,8 @@ import Header from "@/components/Header"
 import { useState } from "react"
 import ComponentList from "@/components/ComponentList"
 import IsometricLogo from "@/components/IsometricLogo"
-import { Pipette } from "lucide-react"
+import { LayoutGrid, Play, Pipette } from "lucide-react"
+import Link from "next/link"
 
 export default function Home() {
   const [isActive, setIsActive] = useState("list")
@@ -33,14 +34,34 @@ export default function Home() {
         </div>
 
         <div className="px-4 sm:px-8 pt-4 pb-2">
-          <section className="flex justify-between">
+          <section className="flex justify-between items-center">
             <h1>Few for now, more in future</h1>
-            {/* <div className="flex gap-2">
-                <Grid3X3 />
-                <Eye />
+            <div className="flex items-center gap-1 bg-muted/40 p-0.5 rounded-lg border border-border/20">
+              <button
+                onClick={() => setIsActive("list")}
+                className={`p-1.5 rounded-md transition-all cursor-pointer ${
+                  isActive === "list"
+                    ? "bg-black/10 dark:bg-white/10 text-foreground dark:text-white"
+                    : "text-muted-foreground hover:text-foreground hover:bg-black/5 dark:hover:bg-white/5"
+                }`}
+                aria-label="List view"
+              >
+                <LayoutGrid className="w-4 h-4" />
+              </button>
+              <Link href="/previews" className="block">
+                <button
+                  className={`p-1.5 rounded-md transition-all cursor-pointer ${
+                    isActive === "preview"
+                      ? "bg-black/10 dark:bg-white/10 text-foreground dark:text-white"
+                      : "text-muted-foreground hover:text-foreground hover:bg-black/5 dark:hover:bg-white/5"
+                  }`}
+                  aria-label="Preview view"
+                >
+                  <Play className="w-4 h-4" />
+                </button>
+              </Link>
             </div> 
-            //future configuration
-            */}
+           
           </section>
         </div>
         <div className="w-screen relative left-1/2 -translate-x-1/2 border-t border-border/40" />
