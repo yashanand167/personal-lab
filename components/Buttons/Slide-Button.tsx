@@ -1,7 +1,7 @@
 "use client"
 
 import { useRef, useState } from "react"
-import { motion, useMotionValue, useTransform, AnimatePresence } from "motion/react"
+import { motion, useMotionValue, useTransform } from "motion/react"
 import { Check, ChevronsRight } from "lucide-react"
 
 export default function SlideButton() {
@@ -10,7 +10,7 @@ export default function SlideButton() {
   const x = useMotionValue(0);
   const buttonRef = useRef<HTMLButtonElement>(null);
 
-  const knobSize = 44
+  const knobSize = 30
   const [maxDrag, setMaxDrag] = useState(260);
 
   const widthTransform = useTransform(x, (val) => val + knobSize + 8);
@@ -27,8 +27,6 @@ export default function SlideButton() {
       layout
       animate={{
         width: done ? 150 : 320,
-        minWidth: done ? 150 : 320,
-        maxWidth: done ? 200 : 320,
         borderRadius: done ? 28 : 12,
       }}
       transition={{
@@ -42,7 +40,9 @@ export default function SlideButton() {
           x.set(0);
         }
       }}
-      className="relative flex items-center justify-center h-14 bg-black border border-gray-800 overflow-hidden cursor-pointer"
+      className={`relative flex items-center justify-center h-14 bg-black border-[0.5px] ${
+        done ? "border-emerald-500" : "border-white/20"
+      } overflow-hidden cursor-pointer`}
     >
       {!done && (
         <motion.div className="pl-5">
@@ -91,7 +91,7 @@ export default function SlideButton() {
           className="flex items-center justify-center text-emerald-500 gap-2"
         >
           <Check className="w-6 h-6" />
-          <h1 className="text-white">Successful</h1>
+          <h1 className="text-emerald-500">Successful</h1>
         </motion.div>
       )}
     </motion.div>

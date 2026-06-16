@@ -10,7 +10,6 @@ interface ComponentItem {
     category: string
     status: "active" | "experimental" | "coming soon"
     updatedAt: string
-    preview: React.ReactNode
 }
 
 export default function ComponentList() {
@@ -21,7 +20,6 @@ export default function ComponentList() {
             category: "Interactions",
             status: "active",
             updatedAt: "Jun 14, 2026",
-            preview: <SlideButton />,
         },
         {
             name: "Glassmorphism Card",
@@ -29,16 +27,7 @@ export default function ComponentList() {
             category: "Visuals",
             status: "active",
             updatedAt: "Jun 14, 2026",
-            preview: (
-                <div className="relative group/card cursor-pointer w-full max-w-[150px] rounded-xl border border-white/10 bg-white/5 p-4 shadow-xl backdrop-blur-md transition-all hover:bg-white/10">
-                    <div className="absolute -inset-px rounded-xl bg-gradient-to-br from-primary/25 via-transparent to-muted-foreground/15 opacity-0 group-hover/card:opacity-100 transition-opacity" />
-                    <div className="space-y-1 relative z-10">
-                        <Sparkles className="h-4 w-4 text-amber-500 animate-pulse" />
-                        <h4 className="text-xs font-semibold">Glassmorphic</h4>
-                        <p className="text-[10px] text-muted-foreground">Hover to inspect highlights</p>
-                    </div>
-                </div>
-            ),
+            
         },
         {
             name: "Tab Indicator Slider",
@@ -46,12 +35,6 @@ export default function ComponentList() {
             category: "Navigation",
             status: "active",
             updatedAt: "Jun 14, 2026",
-            preview: (
-                <div className="flex space-x-1 rounded-lg bg-muted/50 p-1 text-[10px]">
-                    <button className="rounded-md bg-background px-3 py-1 font-medium shadow-sm border border-border/10">Home</button>
-                    <button className="rounded-md px-3 py-1 text-muted-foreground hover:text-foreground transition-colors">Lab</button>
-                </div>
-            ),
         },
         {
             name: "Magnetic Button",
@@ -59,12 +42,7 @@ export default function ComponentList() {
             category: "Interactions",
             status: "experimental",
             updatedAt: "Jun 14, 2026",
-            preview: (
-                <div className="flex items-center gap-2 text-xs border border-border/60 rounded-full px-4 py-2 hover:bg-muted/50 cursor-pointer relative group/mag transition-colors">
-                    <MousePointer className="h-3 w-3 text-muted-foreground group-hover/mag:translate-x-1 group-hover/mag:-translate-y-1 transition-transform" />
-                    <span>Magnetic</span>
-                </div>
-            ),
+
         },
         {
             name: "Performance Monitor",
@@ -72,20 +50,6 @@ export default function ComponentList() {
             category: "Tooling",
             status: "coming soon",
             updatedAt: "Jun 14, 2026",
-            preview: (
-                <div className="flex flex-col gap-1.5 w-full max-w-[130px] p-2 bg-muted/20 border border-border/30 rounded-lg">
-                    <div className="flex justify-between text-[9px] text-muted-foreground font-mono">
-                        <span>FPS</span>
-                        <span className="text-emerald-500 font-bold">60.0</span>
-                    </div>
-                    <div className="h-5 w-full bg-muted/40 rounded flex items-end overflow-hidden p-0.5 gap-0.5">
-                        <div className="bg-emerald-500/80 w-full h-[80%] rounded-sm" />
-                        <div className="bg-emerald-500/80 w-full h-[90%] rounded-sm" />
-                        <div className="bg-emerald-500/80 w-full h-[85%] rounded-sm" />
-                        <div className="bg-emerald-500/80 w-full h-[95%] rounded-sm" />
-                    </div>
-                </div>
-            ),
         },
         {
             name: "Asset Bundler",
@@ -93,12 +57,7 @@ export default function ComponentList() {
             category: "Pipelines",
             status: "coming soon",
             updatedAt: "Jun 14, 2026",
-            preview: (
-                <div className="flex items-center gap-2 text-xs bg-muted/40 border border-dashed border-border rounded-lg p-2 px-3">
-                    <Cpu className="h-4 w-4 text-muted-foreground animate-pulse" />
-                    <span className="font-mono text-[9px]">main.wasm</span>
-                </div>
-            ),
+
         },
     ]
 
@@ -133,16 +92,8 @@ export default function ComponentList() {
                         </div>
                     </div>
 
-                    <div className="my-6 aspect-[16/10] rounded-lg border border-border/40 bg-muted/10 flex items-center justify-center p-4 relative overflow-hidden group-hover:border-border/60 transition-colors">
-                        {item.preview}
-                    </div>
-
-                    <div className="flex justify-between items-center text-[10px] text-muted-foreground">
+                    <div className="flex justify-end items-center text-[10px] text-muted-foreground mt-2">
                         <span>{item.updatedAt}</span>
-                        <span className="flex items-center gap-1 cursor-pointer font-medium hover:text-foreground transition-colors">
-                            <Code className="h-3 w-3" />
-                            Code
-                        </span>
                     </div>
                 </div>
             ))}
