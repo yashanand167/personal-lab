@@ -2,9 +2,13 @@
 
 import { motion, useMotionValue } from 'motion/react'
 import { useRef } from 'react'
+import { useSound } from '@/lib/sound-engine'
+import { chipLay1Sound } from '@/lib/chip-lay-1'
 
 export default function MagneticButton() {
     const ref = useRef(null)
+
+    const [play] = useSound(chipLay1Sound)
 
     const rotateX = useMotionValue(0);
     const rotateY = useMotionValue(0);
@@ -31,7 +35,7 @@ export default function MagneticButton() {
     }
 
     const handleClick = () => {
-        console.log("clicked")
+        play()
     }
 
     return (
