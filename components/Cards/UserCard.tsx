@@ -3,7 +3,7 @@
 import { motion } from "motion/react"
 import { Suspense, useState } from "react"
 import Image from "next/image"
-import { AlarmCheck, Circle, Loader2 } from "lucide-react"
+import { AlarmCheck, Circle, Loader2, CirclePlus, Copy, Check } from "lucide-react"
 
 export interface User {
     firstName: string,
@@ -44,8 +44,8 @@ export default function UserCard({ user }: { user: User }) {
 
             setIsLoading(false);
             setIsMailCopied(true);
-            // await new Promise((resolve) => setTimeout(resolve, 2000));
-            // setIsMailCopied(false);
+            await new Promise((resolve) => setTimeout(resolve, 2000));
+            setIsMailCopied(false);
         }
     }
 
@@ -101,9 +101,10 @@ export default function UserCard({ user }: { user: User }) {
                             border: "1px solid transparent",
                             boxShadow: "0 4px 12px rgba(0, 0, 0, 0.5)"
                         }}
-                        className="flex-1 h-10 flex items-center justify-center rounded-lg text-white font-semibold text-xs hover:opacity-90 transition-opacity cursor-pointer"
+                        className="flex-1 h-10 flex items-center justify-center gap-1.5 rounded-lg text-white font-semibold text-xs hover:opacity-90 transition-opacity cursor-pointer"
                     >
-                        Hire Me
+                        <CirclePlus className="w-3.5 h-3.5" />
+                        <span>Hire Me</span>
                     </button>
 
                     {user.email && emailRegex.test(user.email) && (
@@ -117,7 +118,17 @@ export default function UserCard({ user }: { user: User }) {
                             }}
                             className="flex-1 h-10 flex items-center justify-center rounded-lg text-white text-xs font-semibold hover:opacity-90 transition-opacity cursor-pointer relative overflow-hidden"
                         >
-                            <span>{mailCopied ? "Email Copied" : "Copy Email"}</span>
+                            {mailCopied ? (
+                                <div className="flex items-center justify-center gap-1.5 text-[#b2ff46]">
+                                    <Check className="w-3.5 h-3.5 stroke-[2.5]" />
+                                    <span>Email Copied</span>
+                                </div>
+                            ) : (
+                                <div className="flex items-center justify-center gap-1.5 text-white">
+                                    <Copy className="w-3.5 h-3.5" />
+                                    <span>Copy Email</span>
+                                </div>
+                            )}
 
                             {loading && (
                                 <div className="absolute inset-0 bg-black/50 backdrop-blur-[2px] flex items-center justify-center z-20">
