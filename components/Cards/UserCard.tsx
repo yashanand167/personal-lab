@@ -35,6 +35,8 @@ export default function UserCard({ user }: { user: User }) {
     const [mailCopied, setIsMailCopied] = useState(false)
     const [loading, setIsLoading] = useState(false);
 
+    const isHireDisabled = user.availability !== "open for work";
+
     const handleMailClick = async () => {
         if (user.email && emailRegex.test(user.email)) {
             setIsLoading(true);
@@ -44,8 +46,9 @@ export default function UserCard({ user }: { user: User }) {
 
             setIsLoading(false);
             setIsMailCopied(true);
-            await new Promise((resolve) => setTimeout(resolve, 2000));
-            setIsMailCopied(false);
+            setTimeout(() => {
+                setIsMailCopied(false);
+            }, 2000);
         }
     }
 
@@ -63,7 +66,7 @@ export default function UserCard({ user }: { user: User }) {
         <div
             className="w-full max-w-[350px] rounded-3xl overflow-hidden relative"
         >
-            <div className="bg-gradient-to-tr from-black to-zinc-800 p-5 rounded-t-3xl rounded-b-3xl relative z-10 border border-[#242424]">
+            <div className="bg-gradient-to-tr from-black to-zinc-800 p-5 rounded-t-3xl rounded-b-3xl relative z-10 border border-[#242424] shadow shadow-lg">
                 <div className="flex items-center justify-between text-stone-400 text-xs">
                     <p className="font-medium">{user.profession}</p>
                     <div className="flex items-center gap-1.5">
@@ -96,12 +99,16 @@ export default function UserCard({ user }: { user: User }) {
                 <div className="flex gap-3 items-center mt-6 w-full">
                     <button
                         onClick={handleHireClick}
+                        disabled={isHireDisabled}
                         style={{
                             background: "linear-gradient(to bottom, #393939, #1D1D1D) padding-box, linear-gradient(to bottom, #8A8A8A, #222222) border-box",
                             border: "1px solid transparent",
-                            boxShadow: "0 4px 12px rgba(0, 0, 0, 0.5)"
+                            boxShadow: isHireDisabled ? "none" : "0 4px 12px rgba(0, 0, 0, 0.5)",
+                            opacity: isHireDisabled ? 0.35 : undefined,
+                            cursor: isHireDisabled ? "not-allowed" : "pointer"
                         }}
-                        className="flex-1 h-10 flex items-center justify-center gap-1.5 rounded-lg text-white font-semibold text-xs hover:opacity-90 transition-opacity cursor-pointer"
+                        className={`flex-1 h-10 flex items-center justify-center gap-1.5 rounded-lg text-white font-semibold text-xs transition-opacity ${isHireDisabled ? "" : "hover:opacity-90 cursor-pointer"
+                            }`}
                     >
                         <CirclePlus className="w-3.5 h-3.5" />
                         <span>Hire Me</span>
@@ -110,13 +117,14 @@ export default function UserCard({ user }: { user: User }) {
                     {user.email && emailRegex.test(user.email) && (
                         <button
                             onClick={handleMailClick}
-                            disabled={loading}
+                            disabled={loading || mailCopied}
                             style={{
                                 background: "linear-gradient(to bottom, #1D1D1D, #1C1C1C) padding-box, linear-gradient(to bottom, #686868, #1A1919) border-box",
                                 border: "1px solid transparent",
                                 boxShadow: "0 4px 12px rgba(0, 0, 0, 0.5)"
                             }}
-                            className="flex-1 h-10 flex items-center justify-center rounded-lg text-white text-xs font-semibold hover:opacity-90 transition-opacity cursor-pointer relative overflow-hidden"
+                            className={`flex-1 h-10 flex items-center justify-center rounded-lg text-white text-xs font-semibold transition-opacity relative overflow-hidden ${(loading || mailCopied) ? "cursor-default opacity-90" : "hover:opacity-90 cursor-pointer"
+                                }`}
                         >
                             {mailCopied ? (
                                 <div className="flex items-center justify-center gap-1.5 text-[#b2ff46]">

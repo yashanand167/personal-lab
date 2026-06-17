@@ -5,7 +5,7 @@ import SlideButton from "@/components/Buttons/Slide-Button"
 import UserCard, { User } from "@/components/Cards/UserCard"
 import Header from "@/components/Header"
 
-const userData: User = {
+const user1Data: User = {
     firstName: "Yash",
     lastName: "Anand",
     profilePic: "/Profile.jpg",
@@ -16,6 +16,16 @@ const userData: User = {
     portfolioLink: "https://www.yashanand.com"
 }
 
+const user2Data: User = {
+    firstName: "David",
+    lastName: "Hardy",
+    profilePic: "/Profile.jpg",
+    profession: "UI/UX Designer",
+    availability: "break mode",
+    personalQuote: "Making the digital world a more beautiful place!",
+    email: "yash.anand167@gmail.com",
+    portfolioLink: ""
+}
 
 export default function Showcase() {
   return (
@@ -27,7 +37,10 @@ export default function Showcase() {
           <MagneticButton />
         </div>
         <div className="mt-2">
-          <UserCard user={userData}/>
+          <UserCard user={user1Data}/>
+        </div>
+        <div className="mt-2">
+          <UserCard user={user2Data}/>
         </div>
       </main>
 
