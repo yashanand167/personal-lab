@@ -2,11 +2,9 @@
 
 import { motion, useMotionValue } from 'motion/react'
 import { useRef } from 'react'
-import { useTheme } from 'next-themes'
 
 export default function MagneticButton() {
     const ref = useRef(null)
-    const { resolvedTheme } = useTheme()
 
     const rotateX = useMotionValue(0);
     const rotateY = useMotionValue(0);
@@ -36,19 +34,12 @@ export default function MagneticButton() {
         console.log("clicked")
     }
 
-    const shadowColor = resolvedTheme === "dark" ? "rgba(255, 255, 255, 0.5)" : "rgba(0, 0, 0, 0.25)"
-
     return (
         <motion.button
             onMouseMove={handleMouseMove}
             onMouseLeave={reset}
-            initial={false}
-            animate={{
-                boxShadow: `0px 4px 0px ${shadowColor}`,
-            }}
             whileTap={{
                 y: 4,
-                boxShadow: `0px 0px 0px ${shadowColor}`,
             }}
             style={{
                 rotateX,
@@ -57,7 +48,7 @@ export default function MagneticButton() {
             }}
             ref={ref}
             onClick={handleClick}
-            className="flex items-center justify-center w-[170px] h-14 bg-gradient-to-r from-[#747474] to-[#FBFBFB] border-[1px] border-white rounded-xl text-black hover:opacity-90 transition-all duration-75 cursor-pointer"
+            className="flex items-center justify-center w-[170px] h-14 bg-gradient-to-r from-[#747474] to-[#FBFBFB] border-[1px] border-white rounded-xl text-black shadow-[0px_4px_0px_#555555] active:shadow-none hover:opacity-90 transition-opacity duration-75 cursor-pointer"
         >
             <span className="select-none">Click Me</span>
         </motion.button>
