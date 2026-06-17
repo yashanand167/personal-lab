@@ -22,8 +22,8 @@ export default function ComponentList() {
             updatedAt: "Jun 14, 2026",
         },
         {
-            name: "Glassmorphism Card",
-            description: "Premium glass effect card with smooth border animations.",
+            name: "User Card",
+            description: "Premium Load Effect with smooth border animations.",
             category: "Visuals",
             status: "active",
             updatedAt: "Jun 14, 2026",
@@ -37,7 +37,7 @@ export default function ComponentList() {
             updatedAt: "Jun 14, 2026",
         },
         {
-            name: "Magnetic Button",
+            name: "Parallax Button",
             description: "Interactive button attracting to mouse coordinates.",
             category: "Interactions",
             status: "experimental",

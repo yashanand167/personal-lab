@@ -2,7 +2,19 @@
 
 import MagneticButton from "@/components/Buttons/Magnetic-Button"
 import SlideButton from "@/components/Buttons/Slide-Button"
+import UserCard, { User } from "@/components/Cards/UserCard"
 import Header from "@/components/Header"
+
+const userData: User = {
+    firstName: "Yash",
+    lastName: "Anand",
+    profilePic: "/Profile.jpg",
+    profession: "Design Engineer",
+    availability: "open for work",
+    personalQuote: "Everything is Design!",
+    email: "yash.anand167@gmail.com",
+    portfolioLink: "https://www.yashanand.com"
+}
 
 
 export default function Showcase() {
@@ -13,6 +25,9 @@ export default function Showcase() {
         <SlideButton />
         <div className="mt-2">
           <MagneticButton />
+        </div>
+        <div className="mt-2">
+          <UserCard user={userData}/>
         </div>
       </main>
 
