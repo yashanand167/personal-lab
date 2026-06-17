@@ -13,7 +13,7 @@ export default function MagneticButton() {
     const rotateX = useMotionValue(0);
     const rotateY = useMotionValue(0);
 
-    function handleMouseMove(e: React.MouseEvent<HTMLButtonElement>) {
+    function handleMouseMove(e: React.MouseEvent<HTMLDivElement>) {
         const rect = e.currentTarget.getBoundingClientRect();
 
         const x = e.clientX - rect.left
@@ -39,22 +39,26 @@ export default function MagneticButton() {
     }
 
     return (
-        <motion.button
+        <div
+            ref={ref}
             onMouseMove={handleMouseMove}
             onMouseLeave={reset}
-            whileTap={{
-                y: 4,
-            }}
-            style={{
-                rotateX,
-                rotateY,
-                transformPerspective: 800,
-            }}
-            ref={ref}
-            onClick={handleClick}
-            className="flex items-center justify-center w-[170px] h-14 bg-gradient-to-r from-[#747474] to-[#FBFBFB] border-[1px] border-white rounded-xl text-black shadow-[0px_4px_0px_#555555] active:shadow-none hover:opacity-90 transition-opacity duration-75 cursor-pointer"
+            className="relative w-[170px] h-14"
         >
-            <span className="select-none">Click Me</span>
-        </motion.button>
+            <motion.button
+                whileTap={{
+                    y: 4,
+                }}
+                style={{
+                    rotateX,
+                    rotateY,
+                    transformPerspective: 800,
+                }}
+                onClick={handleClick}
+                className="flex items-center justify-center w-full h-full bg-gradient-to-r from-[#747474] to-[#FBFBFB] border-[1px] border-white rounded-xl text-black shadow-[0px_4px_0px_#555555] active:shadow-none hover:opacity-90 transition-opacity duration-75 cursor-pointer"
+            >
+                <span className="select-none">Click Me</span>
+            </motion.button>
+        </div>
     )
 }
