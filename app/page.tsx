@@ -6,6 +6,7 @@ import ComponentList from "@/components/ComponentList"
 import IsometricLogo from "@/components/IsometricLogo"
 import { LayoutGrid, Play, Pipette } from "lucide-react"
 import Link from "next/link"
+import GridLine from "@/components/GridLine"
 
 export default function Home() {
   const [isActive, setIsActive] = useState("list")
@@ -48,14 +49,14 @@ export default function Home() {
               >
                 <LayoutGrid className="w-4 h-4" />
               </button>
-              <Link href="/previews" className="block">
+              <Link href="/showcase" className="block">
                 <button
                   className={`p-1.5 rounded-md transition-all cursor-pointer ${
-                    isActive === "preview"
+                    isActive === "showcase"
                       ? "bg-black/10 dark:bg-white/10 text-foreground dark:text-white"
                       : "text-muted-foreground hover:text-foreground hover:bg-black/5 dark:hover:bg-white/5"
                   }`}
-                  aria-label="Preview view"
+                  aria-label="Showcase"
                 >
                   <Play className="w-4 h-4" />
                 </button>
@@ -66,6 +67,10 @@ export default function Home() {
         </div>
         <div className="w-screen relative left-1/2 -translate-x-1/2 border-t border-border/40" />
         <ComponentList />
+
+        <div>
+          <GridLine />
+        </div>
       </main>
     </div>
   )

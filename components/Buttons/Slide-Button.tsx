@@ -24,7 +24,7 @@ export default function SlideButton() {
 
   return (
     <motion.div
-      layout
+      initial={false}
       animate={{
         width: done ? 150 : 320,
         borderRadius: done ? 28 : 12,
