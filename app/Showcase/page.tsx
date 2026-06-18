@@ -3,6 +3,7 @@
 import MagneticButton from "@/components/Buttons/Magnetic-Button"
 import SlideButton from "@/components/Buttons/Slide-Button"
 import UserCard, { User } from "@/components/Cards/UserCard"
+import Footer from "@/components/Footer"
 import Header from "@/components/Header"
 import LiquidTabs from "@/components/Tabs/Liquid-Tabs"
 import { ChefHat, LayoutGrid, Play } from "lucide-react"
@@ -74,12 +75,12 @@ export default function Showcase() {
         </div>
 
         {/* Bento Grid */}
-        <div className="w-full border-t border-b border-border/40 flex flex-col gap-[1px] bg-border/40">
+        <div className="w-full border-t border-b border-border/40 flex flex-col bg-background">
           {/* Row 1: Buttons and Liquid Tabs */}
-          <div className="w-full flex flex-col md:flex-row gap-[1px] bg-border/40">
+          <div className="w-full grid grid-cols-1 md:grid-cols-3 border-b border-border/40 bg-background">
             {/* Column 1: Slide & Magnetic Buttons (1/3 Width) */}
-            <div className="md:w-1/3 flex flex-col gap-[1px] bg-border/40">
-              <div className="bg-background p-10 flex items-center justify-center min-h-[140px] flex-1">
+            <div className="flex flex-col border-b border-border/40 md:border-b-0 md:border-r border-border/40">
+              <div className="bg-background p-10 flex items-center justify-center min-h-[140px] flex-1 border-b border-border/40">
                 <SlideButton />
               </div>
               <div className="bg-background p-10 flex items-center justify-center min-h-[140px] flex-1">
@@ -88,7 +89,7 @@ export default function Showcase() {
             </div>
 
             {/* Column 2: Liquid Tabs (2/3 Width) */}
-            <div className="md:w-2/3 bg-background p-6 sm:p-10 flex items-center justify-center min-h-[280px]">
+            <div className="md:col-span-2 bg-background p-6 sm:p-10 flex items-center justify-center min-h-[280px]">
               <div className="w-full max-w-md">
                 <LiquidTabs />
               </div>
@@ -126,8 +127,11 @@ export default function Showcase() {
             <div className="h-[1px] flex-1 bg-border/60 group-hover:bg-border/80 transition-colors duration-200" />
           </div>
         </div>
+        <div className="w-screen relative left-1/2 -translate-x-1/2 border-t border-border/40" />
       </main>
-
+      <div className="mt-6">
+        <Footer />
+      </div>
     </div>
   )
 }
