@@ -6,7 +6,7 @@ import ComponentList from "@/components/ComponentList"
 import IsometricLogo from "@/components/IsometricLogo"
 import { LayoutGrid, Play, Pipette } from "lucide-react"
 import Link from "next/link"
-import GridLine from "@/components/GridLine"
+import GridLine from "@/components/Line-Separator"
 
 export default function Home() {
   const [isActive, setIsActive] = useState("list")

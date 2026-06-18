@@ -81,6 +81,7 @@ export default function UserCard({ user }: { user: User }) {
                             src={user.profilePic}
                             alt={`${user.firstName} ${user.lastName}`}
                             fill
+                            sizes="56px"
                             className="object-cover"
                         />
                     </div>
