@@ -5,7 +5,8 @@ import SlideButton from "@/components/Buttons/Slide-Button"
 import UserCard, { User } from "@/components/Cards/UserCard"
 import Header from "@/components/Header"
 import LiquidTabs from "@/components/Tabs/Liquid-Tabs"
-import { ChefHat } from "lucide-react"
+import { ChefHat, LayoutGrid, Play } from "lucide-react"
+import Link from "next/link"
 
 const user1Data: User = {
   firstName: "Yash",
@@ -47,11 +48,29 @@ export default function Showcase() {
 
       <main className="flex-1 max-w-7xl w-auto md:w-full mx-4 md:mx-auto border-x border-border/40 flex flex-col">
         {/* Page Header */}
-        <div className="w-full px-6 md:px-8 py-10 space-y-1">
-          <p className="text-muted-foreground text-xs font-semibold uppercase tracking-wider">Component Showcase</p>
-          <h1 className="text-2xl md:text-3xl font-semibold text-foreground tracking-tight">
-            Interactive components crafted with precision!
-          </h1>
+        <div className="w-full px-6 md:px-8 py-10 flex flex-col sm:flex-row justify-between sm:items-end gap-4">
+          <div className="space-y-1">
+            <p className="text-muted-foreground text-xs font-semibold uppercase tracking-wider">Component Showcase</p>
+            <h1 className="text-2xl md:text-3xl font-semibold text-foreground tracking-tight">
+              Interactive components crafted with precision!
+            </h1>
+          </div>
+          <div className="flex items-center gap-1 bg-muted/40 p-0.5 rounded-lg border border-border/20 self-start sm:self-auto shrink-0 mb-1">
+            <Link href="/" className="block">
+              <button
+                className="p-1.5 rounded-md transition-all cursor-pointer text-muted-foreground hover:text-foreground hover:bg-black/5 dark:hover:bg-white/5"
+                aria-label="List view"
+              >
+                <LayoutGrid className="w-4 h-4" />
+              </button>
+            </Link>
+            <button
+              className="p-1.5 rounded-md transition-all cursor-pointer bg-black/10 dark:bg-white/10 text-foreground dark:text-white"
+              aria-label="Showcase"
+            >
+              <Play className="w-4 h-4" />
+            </button>
+          </div>
         </div>
 
         {/* Bento Column Layout Grid */}
