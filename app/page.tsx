@@ -41,8 +41,8 @@ export default function Home() {
               <button
                 onClick={() => setIsActive("list")}
                 className={`p-1.5 rounded-md transition-all cursor-pointer ${isActive === "list"
-                    ? "bg-black/10 dark:bg-white/10 text-foreground dark:text-white"
-                    : "text-muted-foreground hover:text-foreground hover:bg-black/5 dark:hover:bg-white/5"
+                  ? "bg-black/10 dark:bg-white/10 text-foreground dark:text-white"
+                  : "text-muted-foreground hover:text-foreground hover:bg-black/5 dark:hover:bg-white/5"
                   }`}
                 aria-label="List view"
               >
@@ -51,8 +51,8 @@ export default function Home() {
               <Link href="/showcase" className="block">
                 <button
                   className={`p-1.5 rounded-md transition-all cursor-pointer ${isActive === "showcase"
-                      ? "bg-black/10 dark:bg-white/10 text-foreground dark:text-white"
-                      : "text-muted-foreground hover:text-foreground hover:bg-black/5 dark:hover:bg-white/5"
+                    ? "bg-black/10 dark:bg-white/10 text-foreground dark:text-white"
+                    : "text-muted-foreground hover:text-foreground hover:bg-black/5 dark:hover:bg-white/5"
                     }`}
                   aria-label="Showcase"
                 >
@@ -65,9 +65,11 @@ export default function Home() {
         </div>
         <div className="w-screen relative left-1/2 -translate-x-1/2 border-t border-border/40" />
         <ComponentList />
-
+        <div className="w-screen relative left-1/2 -translate-x-1/2 border-t border-border/40" />
       </main>
-      <Footer />
+      <div className="mt-6">
+        <Footer />
+      </div>
     </div>
   )
 }

@@ -73,9 +73,9 @@ export default function Footer() {
     return (
         <footer className="w-full border-t border-border/40 bg-background/50 backdrop-blur-sm mt-auto">
             {/* Top Section with Columns */}
-            <div className="px-6 md:px-8 pt-8 pb-4 grid grid-cols-2 md:grid-cols-12 gap-8 relative overflow-hidden">
+            <div className="px-6 md:px-8 pt-8 pb-4 grid grid-cols-3 md:grid-cols-12 gap-x-4 gap-y-6 md:gap-8 relative overflow-hidden">
                 {/* Monogram / Brand Column */}
-                <div className="col-span-2 md:col-span-4 md:col-start-2 space-y-4">
+                <div className="col-span-3 md:col-span-4 md:col-start-2 space-y-4">
                     <div className="flex items-center gap-2.5">
                         <Image
                             src="/Logo.png"
@@ -97,37 +97,27 @@ export default function Footer() {
                             Yash Lab
                         </span>
                     </div>
-                    <p className="text-muted-foreground text-sm max-w-xs leading-relaxed">
+                    <p className="text-muted-foreground text-xs sm:text-sm max-w-xs leading-relaxed">
                         A personal lab to design, build and experiment with ideas.
                     </p>
                 </div>
 
                 {/* Explore Links */}
                 <div className="col-span-1 md:col-span-2 space-y-4">
-                    <h4 className="text-xs font-semibold text-foreground tracking-wider uppercase">Explore</h4>
-                    <ul className="space-y-2.5">
+                    <h4 className="text-[10px] sm:text-xs font-semibold text-foreground tracking-wider uppercase">Explore</h4>
+                    <ul className="space-y-2 sm:space-y-2.5">
                         <li>
-                            <Link href="/" className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-200">
+                            <Link href="/" className="text-xs sm:text-sm text-muted-foreground hover:text-foreground transition-colors duration-200">
                                 Home
                             </Link>
                         </li>
                         <li>
-                            <a
-                                href="https://www.yashanand.com/blogs"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-200"
-                            >
-                                Blogs
-                            </a>
-                        </li>
-                        <li>
-                            <Link href="/showcase" className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-200">
+                            <Link href="/showcase" className="text-xs sm:text-sm text-muted-foreground hover:text-foreground transition-colors duration-200">
                                 Showcase
                             </Link>
                         </li>
                         <li>
-                            <Link href="/docs" className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-200">
+                            <Link href="/docs" className="text-xs sm:text-sm text-muted-foreground hover:text-foreground transition-colors duration-200">
                                 Docs
                             </Link>
                         </li>
@@ -136,20 +126,20 @@ export default function Footer() {
 
                 {/* Resources Links */}
                 <div className="col-span-1 md:col-span-2 space-y-4">
-                    <h4 className="text-xs font-semibold text-foreground tracking-wider uppercase">Resources</h4>
-                    <ul className="space-y-2.5">
+                    <h4 className="text-[10px] sm:text-xs font-semibold text-foreground tracking-wider uppercase">Resources</h4>
+                    <ul className="space-y-2 sm:space-y-2.5">
                         <li>
-                            <span className="text-sm text-muted-foreground">
+                            <span className="text-xs sm:text-sm text-muted-foreground">
                                 Design System
                             </span>
                         </li>
                         <li>
-                            <span className="text-sm text-muted-foreground">
+                            <span className="text-xs sm:text-sm text-muted-foreground">
                                 Guidelines
                             </span>
                         </li>
                         <li>
-                            <span className="text-sm text-muted-foreground">
+                            <span className="text-xs sm:text-sm text-muted-foreground">
                                 Changelog
                             </span>
                         </li>
@@ -157,17 +147,17 @@ export default function Footer() {
                 </div>
 
                 {/* Connect Links */}
-                <div className="col-span-2 md:col-span-3 space-y-4">
-                    <h4 className="text-xs font-semibold text-foreground tracking-wider uppercase">Connect</h4>
-                    <ul className="space-y-2.5">
+                <div className="col-span-1 md:col-span-3 space-y-4">
+                    <h4 className="text-[10px] sm:text-xs font-semibold text-foreground tracking-wider uppercase">Connect</h4>
+                    <ul className="space-y-2 sm:space-y-2.5">
                         <li>
                             <a
                                 href="https://www.yashanand.com"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="flex items-center gap-2.5 text-sm text-muted-foreground hover:text-foreground transition-colors duration-200"
+                                className="flex items-center gap-1.5 sm:gap-2.5 text-xs sm:text-sm text-muted-foreground hover:text-foreground transition-colors duration-200"
                             >
-                                <Globe className="w-4 h-4 shrink-0" />
+                                <Globe className="w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0" />
                                 <span>Portfolio</span>
                             </a>
                         </li>
@@ -176,9 +166,9 @@ export default function Footer() {
                                 href="https://github.com/yashanand167/personal-lab"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="flex items-center gap-2.5 text-sm text-muted-foreground hover:text-foreground transition-colors duration-200"
+                                className="flex items-center gap-1.5 sm:gap-2.5 text-xs sm:text-sm text-muted-foreground hover:text-foreground transition-colors duration-200"
                             >
-                                <Github className="w-4 h-4 shrink-0" />
+                                <Github className="w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0" />
                                 <span>GitHub</span>
                             </a>
                         </li>
@@ -187,9 +177,9 @@ export default function Footer() {
                                 href="https://x.com/yashanand167"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="flex items-center gap-2.5 text-sm text-muted-foreground hover:text-foreground transition-colors duration-200"
+                                className="flex items-center gap-1.5 sm:gap-2.5 text-xs sm:text-sm text-muted-foreground hover:text-foreground transition-colors duration-200"
                             >
-                                <Twitter className="w-4 h-4 shrink-0" />
+                                <Twitter className="w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0" />
                                 <span>Twitter</span>
                             </a>
                         </li>
@@ -198,9 +188,9 @@ export default function Footer() {
                                 href="https://www.linkedin.com/in/yash-anand-b7264b308/"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="flex items-center gap-2.5 text-sm text-muted-foreground hover:text-foreground transition-colors duration-200"
+                                className="flex items-center gap-1.5 sm:gap-2.5 text-xs sm:text-sm text-muted-foreground hover:text-foreground transition-colors duration-200"
                             >
-                                <Linkedin className="w-4 h-4 shrink-0" />
+                                <Linkedin className="w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0" />
                                 <span>LinkedIn</span>
                             </a>
                         </li>
@@ -214,12 +204,12 @@ export default function Footer() {
             </div> */}
 
             {/* Bottom Copyright and Credit Bar */}
-            <div className="px-6 md:px-8 py-4 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-muted-foreground">
+            <div className="px-4 md:px-8 py-4 flex flex-row justify-between items-center gap-1.5 sm:gap-4 text-[9px] min-[400px]:text-[10px] sm:text-xs text-muted-foreground whitespace-nowrap">
                 <div>
-                    © 2026 Yash Lab. All rights reserved.
+                    © 2026 Yash Lab.<span className="hidden sm:inline"> All rights reserved.</span>
                 </div>
-                <div className="flex items-center gap-2 font-medium">
-                    <span className="inline-block w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                <div className="flex items-center gap-1 font-medium">
+                    <span className="inline-block w-1 h-1 rounded-full bg-emerald-500 animate-pulse" />
                     <span>Building • Crafting • Iterating</span>
                 </div>
                 <div>
@@ -227,10 +217,10 @@ export default function Footer() {
                         href="https://github.com/yashanand167/personal-lab"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-1 hover:text-foreground transition-colors duration-200"
+                        className="flex items-center gap-0.5 hover:text-foreground transition-colors duration-200"
                     >
-                        Designed & Built by <span className="font-semibold text-foreground/80 hover:text-foreground">Yash Anand</span>
-                        <ArrowUpRight className="w-3 h-3" />
+                        <span className="hidden sm:inline">Designed & </span>Built by <span className="font-semibold text-foreground/80 hover:text-foreground ml-0.5">Yash Anand</span>
+                        <ArrowUpRight className="w-2.5 h-2.5 sm:w-3 sm:h-3" />
                     </a>
                 </div>
             </div>

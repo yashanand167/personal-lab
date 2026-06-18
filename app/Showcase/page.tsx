@@ -73,26 +73,37 @@ export default function Showcase() {
           </div>
         </div>
 
-        {/* Bento Column Layout Grid */}
-        <div className="w-full border-t border-b border-border/40 bg-border/40 flex flex-col md:flex-row gap-[1px]">
-          {/* Column 1: Controls & Interactive Buttons (1/3 Width) */}
-          <div className="md:w-1/3 flex flex-col gap-[1px] bg-border/40">
-            <div className="bg-background p-10 flex items-center justify-center min-h-[140px] flex-1">
-              <SlideButton />
+        {/* Bento Grid */}
+        <div className="w-full border-t border-b border-border/40 flex flex-col gap-[1px] bg-border/40">
+          {/* Row 1: Buttons and Liquid Tabs */}
+          <div className="w-full flex flex-col md:flex-row gap-[1px] bg-border/40">
+            {/* Column 1: Slide & Magnetic Buttons (1/3 Width) */}
+            <div className="md:w-1/3 flex flex-col gap-[1px] bg-border/40">
+              <div className="bg-background p-10 flex items-center justify-center min-h-[140px] flex-1">
+                <SlideButton />
+              </div>
+              <div className="bg-background p-10 flex items-center justify-center min-h-[140px] flex-1">
+                <MagneticButton />
+              </div>
             </div>
-            <div className="bg-background p-10 flex items-center justify-center min-h-[140px] flex-1">
-              <MagneticButton />
-            </div>
-            <div className="bg-background p-10 flex items-center justify-center min-h-[220px] flex-1">
-              <LiquidTabs />
+
+            {/* Column 2: Liquid Tabs (2/3 Width) */}
+            <div className="md:w-2/3 bg-background p-6 sm:p-10 flex items-center justify-center min-h-[280px]">
+              <div className="w-full max-w-md">
+                <LiquidTabs />
+              </div>
             </div>
           </div>
 
-          {/* Column 2: User Cards Grouped Together (2/3 Width) */}
-          <div className="md:w-2/3 flex flex-col gap-[1px] bg-border/40">
-            <div className="bg-background p-10 flex flex-col lg:flex-row lg:flex-wrap gap-8 items-center justify-center min-h-[450px] flex-1">
+          {/* Row 2: User Cards (Full Width layout with 3 columns on larger screens) */}
+          <div className="w-full grid grid-cols-1 md:grid-cols-3 bg-background">
+            <div className="bg-background p-10 flex items-center justify-center">
               <UserCard user={user1Data} />
+            </div>
+            <div className="bg-background p-10 flex items-center justify-center">
               <UserCard user={user2Data} />
+            </div>
+            <div className="bg-background p-10 flex items-center justify-center">
               <UserCard user={user3Data} />
             </div>
           </div>
