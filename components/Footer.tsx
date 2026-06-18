@@ -209,9 +209,9 @@ export default function Footer() {
             </div>
 
             {/* Giant Outlined YASH LAB Background Text */}
-            <div className="w-full mt-2 overflow-hidden select-none pointer-events-none border-b border-border/40 pb-0 flex justify-center items-center opacity-[0.08] dark:opacity-[0.15] transition-opacity duration-200">
+            {/* <div className="w-full mt-2 overflow-hidden select-none pointer-events-none border-b border-border/40 pb-0 flex justify-center items-center opacity-[0.08] dark:opacity-[0.15] transition-opacity duration-200">
                 <SVG />
-            </div>
+            </div> */}
 
             {/* Bottom Copyright and Credit Bar */}
             <div className="px-6 md:px-8 py-4 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-muted-foreground">
