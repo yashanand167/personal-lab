@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import Image from "next/image"
-import { Globe, Mail, ArrowUpRight } from "lucide-react"
+import { Globe, ArrowUpRight } from "lucide-react"
 
 const Github = ({ className }: { className?: string }) => (
     <svg
@@ -36,6 +36,18 @@ const Linkedin = ({ className }: { className?: string }) => (
         <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
         <rect width="4" height="12" x="2" y="9" />
         <circle cx="4" cy="4" r="2" />
+    </svg>
+)
+
+const Twitter = ({ className }: { className?: string }) => (
+    <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+        className={className}
+    >
+        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
     </svg>
 )
 
@@ -150,7 +162,7 @@ export default function Footer() {
                     <ul className="space-y-2.5">
                         <li>
                             <a
-                                href="https://github.com/yashanand167/personal-lab"
+                                href="https://www.yashanand.com"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="flex items-center gap-2.5 text-sm text-muted-foreground hover:text-foreground transition-colors duration-200"
@@ -172,22 +184,24 @@ export default function Footer() {
                         </li>
                         <li>
                             <a
-                                href="https://github.com/yashanand167/personal-lab"
+                                href="https://x.com/yashanand167"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex items-center gap-2.5 text-sm text-muted-foreground hover:text-foreground transition-colors duration-200"
+                            >
+                                <Twitter className="w-4 h-4 shrink-0" />
+                                <span>Twitter</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a
+                                href="https://www.linkedin.com/in/yash-anand-b7264b308/"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="flex items-center gap-2.5 text-sm text-muted-foreground hover:text-foreground transition-colors duration-200"
                             >
                                 <Linkedin className="w-4 h-4 shrink-0" />
                                 <span>LinkedIn</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a
-                                href="mailto:yash.anand167@gmail.com"
-                                className="flex items-center gap-2.5 text-sm text-muted-foreground hover:text-foreground transition-colors duration-200"
-                            >
-                                <Mail className="w-4 h-4 shrink-0" />
-                                <span>Email</span>
                             </a>
                         </li>
                     </ul>
