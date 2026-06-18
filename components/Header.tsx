@@ -1,27 +1,83 @@
 "use client"
 
-import { Moon, Sun } from "lucide-react"
+import { Moon, Play, Sun } from "lucide-react"
 import { useTheme } from "next-themes"
 import { Button } from "@/components/ui/button"
 import { useSound } from "@/lib/sound-engine";
 import { select001Sound } from "@/lib/select-001";
+import Link from "next/link"
+import { usePathname } from "next/navigation"
+import { motion } from "motion/react"
 
 export default function Header() {
   const { setTheme, resolvedTheme } = useTheme()
   const [playSelect] = useSound(select001Sound, { volume: 0.5 });
+  const pathname = usePathname()
+
+  const isComponentsActive = pathname === "/" || pathname === "/showcase"
+  const isDocsActive = pathname === "/docs"
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="mx-4 md:mx-auto flex h-14 max-w-4xl w-auto md:w-full items-center justify-between px-4 sm:px-8 border-x border-border/40">
         <div className="flex items-center gap-6 md:gap-10">
-          <a href="/" className="flex items-center space-x-2">
+          <Link href="/" className="flex items-center space-x-2">
             <span className="font-sans font-medium inline-block text-lg">
               Personal Lab
             </span>
-          </a>
+          </Link>
+        </div>
+
+        <div className="flex items-center space-x-4 relative h-full">
+          <Link
+            href="/"
+            className={`relative h-full flex items-center px-1 text-sm font-medium transition-colors duration-200 select-none ${isComponentsActive
+              ? "text-foreground font-semibold"
+              : "text-muted-foreground hover:text-foreground"
+              }`}
+          >
+            Components
+            {isComponentsActive && (
+              <motion.span
+                layoutId="active-nav-indicator"
+                className="absolute bottom-0 left-0 right-0 h-[2px] bg-foreground"
+                transition={{ type: "spring", stiffness: 380, damping: 30 }}
+              />
+            )}
+          </Link>
+          <Link
+            href="/docs"
+            className={`relative h-full flex items-center px-1 text-sm font-medium transition-colors duration-200 select-none ${isDocsActive
+              ? "text-foreground font-semibold"
+              : "text-muted-foreground hover:text-foreground"
+              }`}
+          >
+            Docs
+            {isDocsActive && (
+              <motion.span
+                layoutId="active-nav-indicator"
+                className="absolute bottom-0 left-0 right-0 h-[2px] bg-foreground"
+                transition={{ type: "spring", stiffness: 380, damping: 30 }}
+              />
+            )}
+          </Link>
         </div>
 
         <div className="flex items-center space-x-2">
+          <Button
+            variant="outline"
+            size="icon"
+            asChild
+          >
+            <a
+              href="https://github.com/yashanand167/personal-lab"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub Repository"
+            >
+             
+            </a>
+          </Button>
           <Button
             variant="outline"
             size="icon"
