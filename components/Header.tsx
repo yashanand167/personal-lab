@@ -8,6 +8,7 @@ import { select001Sound } from "@/lib/select-001";
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { motion } from "motion/react"
+import Image from "next/image";
 
 export default function Header() {
   const { setTheme, resolvedTheme } = useTheme()
@@ -19,9 +20,8 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className={`mx-4 md:mx-auto flex h-14 w-auto md:w-full items-center justify-between px-4 sm:px-8 border-x border-border/40 ${
-        pathname === "/showcase" ? "max-w-7xl" : "max-w-4xl"
-      }`}>
+      <div className={`mx-4 md:mx-auto flex h-14 w-auto md:w-full items-center justify-between px-4 sm:px-8 border-x border-border/40 ${pathname === "/showcase" ? "max-w-7xl" : "max-w-4xl"
+        }`}>
         <div className="flex items-center gap-6 md:gap-10">
           <Link href="/" className="flex items-center space-x-2">
             <span className="font-sans font-medium inline-block text-lg">
@@ -63,23 +63,18 @@ export default function Header() {
               />
             )}
           </Link>
+
+          <a
+            href="https://github.com/yashanand167/personal-lab"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center justify-center hover:opacity-80 transition-opacity"
+          >
+            <Image src="/Github.jpg" alt="Github" width={20} height={20} className="rounded-full object-cover" />
+          </a>
         </div>
 
         <div className="flex items-center space-x-2">
-          <Button
-            variant="outline"
-            size="icon"
-            asChild
-          >
-            <a
-              href="https://github.com/yashanand167/personal-lab"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="GitHub Repository"
-            >
-             
-            </a>
-          </Button>
           <Button
             variant="outline"
             size="icon"

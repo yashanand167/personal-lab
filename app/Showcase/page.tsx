@@ -44,7 +44,7 @@ export default function Showcase() {
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
-      
+
       <main className="flex-1 max-w-7xl w-auto md:w-full mx-4 md:mx-auto border-x border-border/40 flex flex-col">
         {/* Page Header */}
         <div className="w-full px-6 md:px-8 py-10 space-y-1">
@@ -97,7 +97,7 @@ export default function Showcase() {
           </div>
         </div>
       </main>
-      
+
     </div>
   )
 }

@@ -6,7 +6,6 @@ import ComponentList from "@/components/ComponentList"
 import IsometricLogo from "@/components/IsometricLogo"
 import { LayoutGrid, Play, Pipette } from "lucide-react"
 import Link from "next/link"
-import GridLine from "@/components/Line-Separator"
 
 export default function Home() {
   const [isActive, setIsActive] = useState("list")
@@ -68,9 +67,6 @@ export default function Home() {
         <div className="w-screen relative left-1/2 -translate-x-1/2 border-t border-border/40" />
         <ComponentList />
 
-        <div>
-          <GridLine />
-        </div>
       </main>
     </div>
   )
