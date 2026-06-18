@@ -12,14 +12,16 @@ export default function LiquidTabs() {
 
     return (
         <div
-            className="p-10 rounded-2xl"
+            className="p-10 rounded-2xl shadow-lg shadow-[#DDCAFF] dark:shadow-[#735EDF]/15"
             style={{
                 border: "1px solid transparent",
                 background: "linear-gradient(var(--background), var(--background)) padding-box, linear-gradient(to bottom, #FB5959, #735EDF) border-box",
             }}
         >
             <motion.div className='flex gap-5'>
-                <div onClick={() => setTab('tab 1')}>
+                <div 
+                className=''
+                onClick={() => setTab('tab 1')}>
                     <h1>Tab 1</h1>
                 </div>
 
