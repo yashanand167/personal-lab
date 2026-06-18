@@ -81,7 +81,9 @@ export default function Footer() {
                             loading="lazy"
                             className="h-9 w-9 hidden dark:block object-contain"
                         />
-                        <h1>Yash Lab</h1>
+                        <span className="font-sans font-semibold text-lg tracking-tight text-foreground">
+                            Yash Lab
+                        </span>
                     </div>
                     <p className="text-muted-foreground text-sm max-w-xs leading-relaxed">
                         A personal lab to design, build and experiment with ideas.
