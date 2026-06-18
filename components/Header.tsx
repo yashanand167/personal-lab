@@ -24,9 +24,22 @@ export default function Header() {
         }`}>
         <div className="flex items-center gap-6 md:gap-10">
           <Link href="/" className="flex items-center space-x-2">
-            <span className="font-sans font-medium inline-block text-lg">
-              Personal Lab
-            </span>
+            <Image
+              src="/Logo.png"
+              alt="Personal Lab"
+              width={36}
+              height={36}
+              loading="lazy"
+              className="h-9 w-9 dark:hidden object-contain"
+            />
+            <Image
+              src="/LightLogo.png"
+              alt="Personal Lab"
+              width={36}
+              height={36}
+              loading="lazy"
+              className="h-9 w-9 hidden dark:block object-contain"
+            />
           </Link>
         </div>
 

@@ -1,6 +1,7 @@
 "use client"
 
 import Link from "next/link"
+import Image from "next/image"
 import { Globe, Mail, ArrowUpRight } from "lucide-react"
 
 const Github = ({ className }: { className?: string }) => (
@@ -64,10 +65,23 @@ export default function Footer() {
                 {/* Monogram / Brand Column */}
                 <div className="col-span-2 md:col-span-4 md:col-start-2 space-y-4">
                     <div className="flex items-center gap-2.5">
-                        <YLLogo />
-                        <span className="font-sans font-semibold text-lg tracking-tight text-foreground">
-                            Yash Lab
-                        </span>
+                        <Image
+                            src="/Logo.png"
+                            alt="Yash Lab"
+                            width={36}
+                            height={36}
+                            loading="lazy"
+                            className="h-9 w-9 dark:hidden object-contain"
+                        />
+                        <Image
+                            src="/LightLogo.png"
+                            alt="Yash Lab"
+                            width={36}
+                            height={36}
+                            loading="lazy"
+                            className="h-9 w-9 hidden dark:block object-contain"
+                        />
+                        <h1>Yash Lab</h1>
                     </div>
                     <p className="text-muted-foreground text-sm max-w-xs leading-relaxed">
                         A personal lab to design, build and experiment with ideas.
