@@ -6,6 +6,7 @@ import UserCard, { User } from "@/components/Cards/UserCard"
 import Footer from "@/components/Footer"
 import Header from "@/components/Header"
 import LiquidTabs from "@/components/Tabs/Liquid-Tabs"
+import { LoaderEffectShowcase } from "@/components/Effects/LoaderEffect"
 import { ChefHat, LayoutGrid, Play } from "lucide-react"
 import Link from "next/link"
 
@@ -95,11 +96,9 @@ export default function Showcase() {
               <LiquidTabs />
             </div>
 
-            {/* Column 3: Future Component Placeholder */}
+            {/* Column 3: UI with Loader Effect */}
             <div className="bg-background p-6 sm:p-10 flex items-center justify-center min-h-[280px]">
-              <div className="text-muted-foreground/40 text-sm font-medium tracking-wide">
-                Coming Soon
-              </div>
+              <LoaderEffectShowcase />
             </div>
           </div>
 

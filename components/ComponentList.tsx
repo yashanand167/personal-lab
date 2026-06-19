@@ -45,10 +45,10 @@ export default function ComponentList() {
 
         },
         {
-            name: "Performance Monitor",
-            description: "Sleek frame analysis graphs for local testing.",
-            category: "Tooling",
-            status: "coming soon",
+            name: "UI with Loader Effect",
+            description: "Sleek loaders effects for UI.",
+            category: "Visuals",
+            status: "active",
             updatedAt: "Jun 14, 2026",
         },
         {
