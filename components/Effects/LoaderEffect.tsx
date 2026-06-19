@@ -69,7 +69,7 @@ export function CardContent() {
     return (
         <div className="w-full max-w-[270px] p-4 rounded-xl border border-zinc-200/50 dark:border-zinc-800/50 bg-background shadow-sm space-y-3 text-left">
             <div className="flex items-center gap-3">
-                <div className="relative w-10 h-10 rounded-full overflow-hidden flex-shrink-0">
+                <div className="relative w-10 h-10 rounded-full overflow-hidden flex-shrink-0 border border-zinc-200/80 dark:border-zinc-800/80">
                     <Image
                         src="/image.png"
                         alt="Profile"
