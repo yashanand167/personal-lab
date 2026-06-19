@@ -76,18 +76,25 @@ export default function Header() {
               />
             )}
           </Link>
-
-          <a
-            href="https://github.com/yashanand167/personal-lab"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center justify-center hover:opacity-80 transition-opacity"
-          >
-            <Image src="/Github.jpg" alt="Github" width={20} height={20} className="rounded-full object-cover" />
-          </a>
         </div>
 
-        <div className="flex items-center space-x-2">
+        <div className="flex items-center space-x-3">
+          <Button
+            variant="outline"
+            size="icon"
+            asChild
+            className="dark:bg-white dark:hover:bg-white/90 dark:border-transparent"
+          >
+            <Link href="https://github.com/yashanand167/personal-lab" target="_blank" rel="noopener noreferrer">
+              <Image 
+                src="/Github-Icon.png" 
+                alt="Github" 
+                width={18} 
+                height={18} 
+                className="object-contain" 
+              />
+            </Link>
+          </Button>
           <Button
             variant="outline"
             size="icon"
