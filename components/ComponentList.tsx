@@ -34,7 +34,7 @@ export default function ComponentList() {
             description: "Smooth sliding tab background switcher.",
             category: "Navigation",
             status: "active",
-            updatedAt: "Jun 14, 2026",
+            updatedAt: "Jun 19, 2026",
         },
         {
             name: "Parallax Button",
@@ -49,7 +49,7 @@ export default function ComponentList() {
             description: "Sleek loaders effects for UI.",
             category: "Visuals",
             status: "active",
-            updatedAt: "Jun 14, 2026",
+            updatedAt: "Jun 19, 2026",
         },
         {
             name: "Asset Bundler",
