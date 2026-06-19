@@ -29,7 +29,7 @@ export default function LiquidTabs() {
                         {tab === t && (
                             <motion.div
                                 layoutId="active-liquid-tab"
-                                className="absolute inset-0 bg-gradient-to-tr from-black via-zinc-900 to-zinc-800 dark:bg-none dark:bg-white rounded-lg border border-black/30 border-t-white/25 dark:border-transparent shadow-sm -z-10"
+                                className="absolute inset-0 bg-gradient-to-tr from-black via-zinc-900 to-zinc-800 dark:bg-none dark:bg-white rounded-lg -z-10"
                                 transition={TRANSITION}
                             />
                         )}
