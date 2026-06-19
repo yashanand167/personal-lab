@@ -76,9 +76,9 @@ export default function Showcase() {
 
         {/* Bento Grid */}
         <div className="w-full border-t border-b border-border/40 flex flex-col bg-background">
-          {/* Row 1: Buttons and Liquid Tabs */}
+          {/* Row 1: Interactive Components */}
           <div className="w-full grid grid-cols-1 md:grid-cols-3 border-b border-border/40 bg-background">
-            {/* Column 1: Slide & Magnetic Buttons (1/3 Width) */}
+            {/* Column 1: Slide & Magnetic Buttons */}
             <div className="flex flex-col border-b border-border/40 md:border-b-0 md:border-r border-border/40">
               <div className="bg-background p-10 flex items-center justify-center min-h-[140px] flex-1 border-b border-border/40">
                 <SlideButton />
@@ -88,10 +88,15 @@ export default function Showcase() {
               </div>
             </div>
 
-            {/* Column 2: Liquid Tabs (2/3 Width) */}
-            <div className="md:col-span-2 bg-background p-6 sm:p-10 flex items-center justify-center min-h-[280px]">
-              <div className="w-full max-w-md">
-                <LiquidTabs />
+            {/* Column 2: Liquid Tabs */}
+            <div className="bg-background p-6 sm:p-10 flex items-center justify-center min-h-[280px] border-b border-border/40 md:border-b-0 md:border-r border-border/40">
+              <LiquidTabs />
+            </div>
+
+            {/* Column 3: Future Component Placeholder */}
+            <div className="bg-background p-6 sm:p-10 flex items-center justify-center min-h-[280px]">
+              <div className="text-muted-foreground/40 text-sm font-medium tracking-wide">
+                Coming Soon
               </div>
             </div>
           </div>
