@@ -73,9 +73,11 @@ export default function Showcase() {
             </button>
           </div>
         </div>
+        <div className="w-screen relative left-1/2 -translate-x-1/2 border-t border-border/40" />
+        <div className="w-screen relative mt-6 left-1/2 -translate-x-1/2 border-t border-border/40" />
 
         {/* Bento Grid */}
-        <div className="w-full border-t border-b border-border/40 flex flex-col bg-background">
+        <div className="w-full border-b border-border/40 flex flex-col bg-background">
           {/* Row 1: Interactive Components */}
           <div className="w-full grid grid-cols-1 md:grid-cols-3 border-b border-border/40 bg-background">
             {/* Column 1: Slide & Magnetic Buttons */}
