@@ -19,7 +19,7 @@ export default function Header() {
   const isDocsActive = pathname === "/docs"
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background">
       <div className={`mx-4 md:mx-auto flex h-14 w-auto md:w-full items-center justify-between px-4 sm:px-8 border-x border-border/40 ${pathname === "/showcase" ? "max-w-7xl" : "max-w-4xl"
         }`}>
         <div className="flex items-center gap-6 md:gap-10">
