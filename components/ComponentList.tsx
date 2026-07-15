@@ -4,6 +4,8 @@ import React from "react"
 import { Sparkles, ArrowUpRight, Code, Layers, MousePointer, Cpu } from "lucide-react"
 import SlideButton from "@/components/Buttons/Slide-Button"
 
+import Link from "next/link"
+
 interface ComponentItem {
     name: string
     description: string
@@ -27,7 +29,7 @@ export default function ComponentList() {
             category: "Visuals",
             status: "active",
             updatedAt: "Jun 14, 2026",
-            
+
         },
         {
             name: "Tab Indicator Slider",
@@ -64,9 +66,10 @@ export default function ComponentList() {
     return (
         <div className="grid grid-cols-1 md:grid-cols-3 bg-border/40 gap-[1px]">
             {components.map((item, i) => (
-                <div
+                <Link
                     key={i}
-                    className="bg-background p-6 flex flex-col justify-between group hover:bg-muted/5 transition-colors duration-300"
+                    href="/docs"
+                    className="bg-background p-6 flex flex-col justify-between group hover:bg-muted/5 transition-colors duration-300 cursor-pointer"
                 >
                     <div className="space-y-3">
                         <div className="flex items-center justify-between">
@@ -95,7 +98,7 @@ export default function ComponentList() {
                     <div className="flex justify-end items-center text-[10px] text-muted-foreground mt-2">
                         <span>{item.updatedAt}</span>
                     </div>
-                </div>
+                </Link>
             ))}
         </div>
     )
