@@ -17,12 +17,13 @@ export default function Header() {
 
   const isComponentsActive = pathname === "/" || pathname === "/showcase"
   const isDocsActive = pathname === "/docs"
+  const isInteractionsActive = pathname === "/interactions"
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background">
-      <div className={`mx-4 md:mx-auto flex h-14 w-auto md:w-full items-center justify-between px-4 sm:px-8 border-x border-border/40 ${pathname === "/showcase" ? "max-w-7xl" : "max-w-4xl"
+      <div className={`mx-4 md:mx-auto flex h-14 w-auto md:w-full items-center justify-between px-3 sm:px-8 border-x border-border/40 ${pathname === "/showcase" ? "max-w-7xl" : "max-w-4xl"
         }`}>
-        <div className="flex items-center gap-6 md:gap-10">
+        <div className="flex items-center gap-4 sm:gap-6 md:gap-10">
           <Link href="/" className="flex items-center space-x-2">
             <Image
               src="/Logo.png"
@@ -30,7 +31,7 @@ export default function Header() {
               width={36}
               height={36}
               loading="lazy"
-              className="h-9 w-9 dark:hidden object-contain"
+              className="h-7 w-7 sm:h-9 sm:w-9 dark:hidden object-contain"
             />
             <Image
               src="/LightLogo.png"
@@ -38,15 +39,15 @@ export default function Header() {
               width={36}
               height={36}
               loading="lazy"
-              className="h-9 w-9 hidden dark:block object-contain"
+              className="h-7 w-7 sm:h-9 sm:w-9 hidden dark:block object-contain"
             />
           </Link>
         </div>
 
-        <div className="flex items-center space-x-4 relative h-full">
+        <div className="flex items-center space-x-2.5 sm:space-x-4 relative h-full">
           <Link
             href="/"
-            className={`relative h-full flex items-center px-1 text-sm font-medium transition-colors duration-200 select-none ${isComponentsActive
+            className={`relative h-full flex items-center px-1 text-xs sm:text-sm font-medium transition-colors duration-200 select-none ${isComponentsActive
               ? "text-foreground font-semibold"
               : "text-muted-foreground hover:text-foreground"
               }`}
@@ -62,7 +63,7 @@ export default function Header() {
           </Link>
           <Link
             href="/docs"
-            className={`relative h-full flex items-center px-1 text-sm font-medium transition-colors duration-200 select-none ${isDocsActive
+            className={`relative h-full flex items-center px-1 text-xs sm:text-sm font-medium transition-colors duration-200 select-none ${isDocsActive
               ? "text-foreground font-semibold"
               : "text-muted-foreground hover:text-foreground"
               }`}
@@ -76,9 +77,25 @@ export default function Header() {
               />
             )}
           </Link>
+          <Link
+            href="/interactions"
+            className={`relative h-full flex items-center px-1 text-xs sm:text-sm font-medium transition-colors duration-200 select-none ${isInteractionsActive
+              ? "text-foreground font-semibold"
+              : "text-muted-foreground hover:text-foreground"
+              }`}
+          >
+            Interactions
+            {isInteractionsActive && (
+              <motion.span
+                layoutId="active-nav-indicator"
+                className="absolute bottom-0 left-0 right-0 h-[2px] bg-foreground"
+                transition={{ type: "spring", stiffness: 380, damping: 30 }}
+              />
+            )}
+          </Link>
         </div>
 
-        <div className="flex items-center space-x-3">
+        <div className="flex items-center space-x-1.5 sm:space-x-3">
           <Button
             variant="outline"
             size="icon"

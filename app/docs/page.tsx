@@ -122,11 +122,11 @@ export default function Docs() {
         {/* Sticky Header block (Title + Double Lines) on desktop */}
         <div className="xl:sticky xl:top-14 bg-background z-20">
           {/* Top Header Section */}
-          <div className="pt-10 px-6 sm:px-10 flex flex-col">
-            <p className="text-muted-foreground text-xs font-semibold uppercase tracking-wider">
+          <div className="pt-6 sm:pt-10 px-4 sm:px-10 flex flex-col">
+            <p className="text-muted-foreground text-[10px] sm:text-xs font-semibold uppercase tracking-wider">
               {activeTab === "introduction" ? "Docs" : "Components"}
             </p>
-            <h1 className="text-2xl md:text-3xl font-semibold text-foreground tracking-tight capitalize mt-1">
+            <h1 className="text-xl sm:text-2xl md:text-3xl font-semibold text-foreground tracking-tight capitalize mt-1">
               {activeTab}
             </h1>
             <p className="text-xs sm:text-sm text-muted-foreground mt-2 max-w-2xl leading-relaxed">
@@ -139,7 +139,7 @@ export default function Docs() {
           </div>
 
           {/* Viewport-wide Double Divider Lines */}
-          <div className="py-6 flex flex-col gap-6 relative">
+          <div className="py-4 sm:py-6 flex flex-col gap-4 sm:gap-6 relative">
             <div className="w-screen relative left-1/2 -translate-x-1/2 border-t border-border/40" />
             <div className="w-screen relative left-1/2 -translate-x-1/2 border-t border-border/40" />
           </div>
