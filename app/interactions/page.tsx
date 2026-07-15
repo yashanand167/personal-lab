@@ -2,6 +2,9 @@
 
 import Header from "@/components/Header"
 import Footer from "@/components/Footer"
+import DottedLoading from "@/components/Interactions/Loadings/dotted-loading"
+import DottedCircleLoading from "@/components/Interactions/Loadings/dotted-circle"
+import DottedTrapezoid from "@/components/Interactions/Loadings/dotted-trapezoid"
 
 export default function InteractionPage() {
   return (
@@ -39,8 +42,21 @@ export default function InteractionPage() {
         </div>
 
         {/* Right Main Content */}
-        <main className="flex-1 p-6 sm:p-10 bg-background flex flex-col min-h-[500px]">
-          {/* Main content placeholder */}
+        <main className="flex-1 p-6 sm:p-10 bg-background flex flex-col justify-center min-h-[500px]">
+          <div className="grid grid-cols-1 md:grid-cols-3 border border-dotted border-border overflow-hidden bg-card/5">
+            <div className="flex flex-col items-center justify-center p-12 border-b md:border-b-0 md:border-r border-dotted border-border h-48 relative">
+              <DottedLoading />
+              <span className="absolute bottom-3 text-[10px] uppercase tracking-wider text-muted-foreground font-mono">Dotted Grid</span>
+            </div>
+            <div className="flex flex-col items-center justify-center p-12 border-b md:border-b-0 md:border-r border-dotted border-border h-48 relative">
+              <DottedCircleLoading />
+              <span className="absolute bottom-3 text-[10px] uppercase tracking-wider text-muted-foreground font-mono">Dotted Circle</span>
+            </div>
+            <div className="flex flex-col items-center justify-center p-12 h-48 relative">
+              <DottedTrapezoid />
+              <span className="absolute bottom-3 text-[10px] uppercase tracking-wider text-muted-foreground font-mono">Dotted Trapezoid</span>
+            </div>
+          </div>
         </main>
       </div>
 

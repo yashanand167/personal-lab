@@ -48,11 +48,13 @@ export default function Docs() {
   const [activeTab, setActiveTab] = useState("introduction")
 
   return (
-    <div className="flex flex-col min-h-screen relative">
+    <div className="flex flex-col h-screen overflow-hidden relative">
       <Header />
 
+      <div className="flex-1 overflow-y-auto overflow-x-hidden relative flex flex-col">
+
       {/* Left Sidebar - completely left on desktop (fixed position) */}
-      <aside className="hidden xl:flex flex-col gap-1.5 w-40 2xl:w-48 shrink-0 fixed left-8 2xl:left-16 top-64 z-10">
+      <aside className="hidden xl:flex flex-col gap-1.5 w-40 2xl:w-48 shrink-0 fixed left-8 2xl:left-16 top-64 z-10 overflow-y-hidden select-none">
         <div className="flex flex-col gap-1.5">
           <p className="text-[10px] font-bold tracking-wider text-muted-foreground/60 uppercase mb-3 px-3">
             Documentation
@@ -120,7 +122,7 @@ export default function Docs() {
       <div className="flex-1 max-w-4xl w-auto md:w-full mx-4 md:mx-auto border-x border-border/40 bg-background flex flex-col relative pb-12">
 
         {/* Sticky Header block (Title + Double Lines) on desktop */}
-        <div className="xl:sticky xl:top-14 bg-background z-20">
+        <div className="xl:sticky xl:top-0 bg-background z-20">
           {/* Top Header Section */}
           <div className="pt-6 sm:pt-10 px-4 sm:px-10 flex flex-col">
             <p className="text-muted-foreground text-[10px] sm:text-xs font-semibold uppercase tracking-wider">
@@ -146,7 +148,7 @@ export default function Docs() {
         </div>
 
         {/* Mobile/Tablet navigation (visible below xl) */}
-        <div className="flex xl:hidden sticky top-14 bg-background border-b border-border/40 p-3 overflow-x-auto gap-2 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] z-20">
+        <div className="flex xl:hidden sticky top-0 bg-background border-b border-border/40 p-3 overflow-x-auto gap-2 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] z-20">
           {/* Introduction link */}
           <button
             onClick={() => setActiveTab("introduction")}
@@ -200,12 +202,63 @@ export default function Docs() {
         {/* Right Main Content */}
         <main className="flex-1 p-6 sm:p-10 bg-background flex flex-col min-h-[500px]">
           {activeTab === "introduction" && (
-            <div className="space-y-4">
-              <div className="p-4 border border-border/40 rounded-xl bg-muted/20 flex gap-3 items-center">
-                <ChefHat className="w-5 h-5 text-muted-foreground" />
-                <span className="text-xs text-muted-foreground font-medium">
-                  More components are being designed and coded actively. Stay tuned!
-                </span>
+            <div className="space-y-8">
+              {/* Introduction Title and Description */}
+              <div className="space-y-3">
+                <h2 className="text-xl font-semibold text-foreground tracking-tight">Introduction</h2>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  Personal Lab is a curated collection of beautiful, interactive UI micro-interactions, layout components, and custom motion designs. Built using modern technologies like Tailwind CSS, Framer Motion, and Lucide React, these components are designed to feel premium, responsive, and alive.
+                </p>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  Whether you are looking to build a sleek navigation system, an animated button, or a custom loading indicator, this lab acts as a library of experiments and references to copy-paste or learn from.
+                </p>
+              </div>
+
+              {/* Source Code Note */}
+              <div className="p-4 border border-dotted border-border rounded-xl bg-muted/5 flex gap-3 items-start">
+                <ChefHat className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+                <div className="space-y-1">
+                  <p className="text-xs text-foreground font-semibold">More is on the way!</p>
+                  <p className="text-xs text-muted-foreground leading-relaxed">
+                    More components are being designed and coded actively. Detailed documentation and **source code files for each component will be provided shortly**.
+                  </p>
+                </div>
+              </div>
+
+              {/* Prerequisites Table */}
+              <div className="space-y-3">
+                <h3 className="text-sm font-semibold text-foreground uppercase tracking-wider">Prerequisites</h3>
+                <p className="text-xs text-muted-foreground">
+                  To use these components in your own projects, ensure you have the following packages installed:
+                </p>
+                <div className="overflow-hidden border border-dotted border-border rounded-lg bg-card/5">
+                  <table className="w-full text-left border-collapse text-xs">
+                    <thead>
+                      <tr className="border-b border-dotted border-border bg-muted/20">
+                        <th className="p-3 font-semibold text-foreground">Package</th>
+                        <th className="p-3 font-semibold text-foreground">Version / Status</th>
+                        <th className="p-3 font-semibold text-foreground">Purpose</th>
+                      </tr>
+                    </thead>
+                    <tbody className="divide-y divide-dotted divide-border">
+                      <tr>
+                        <td className="p-3 font-medium text-foreground">Tailwind CSS</td>
+                        <td className="p-3 text-muted-foreground">v4.0+</td>
+                        <td className="p-3 text-muted-foreground">Core utility-first styling and theme values.</td>
+                      </tr>
+                      <tr>
+                        <td className="p-3 font-medium text-foreground">Framer Motion</td>
+                        <td className="p-3 text-muted-foreground">v11.0+ (motion/react)</td>
+                        <td className="p-3 text-muted-foreground">Fluid, spring-based UI animations and gesture tracking.</td>
+                      </tr>
+                      <tr>
+                        <td className="p-3 font-medium text-foreground">Lucide React</td>
+                        <td className="p-3 text-muted-foreground">Latest</td>
+                        <td className="p-3 text-muted-foreground">Crisp, SVG-based icons for indicators and UI elements.</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
               </div>
             </div>
           )}
@@ -256,6 +309,7 @@ export default function Docs() {
       </div>
 
       <Footer />
+      </div>
     </div>
   )
 }
