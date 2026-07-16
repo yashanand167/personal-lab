@@ -265,13 +265,13 @@ export default function Docs() {
 
           {activeTab === "buttons" && (
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 border border-border/40 rounded-xl overflow-hidden bg-background">
-              <div className="bg-background/40 p-8 sm:p-12 flex flex-col items-center justify-center min-h-[200px] border-b sm:border-b-0 sm:border-r border-border/40 hover:bg-muted/5 transition-colors duration-300">
+              <div className="bg-background/40 p-6 sm:p-12 flex flex-col items-center justify-center min-h-[200px] border-b sm:border-b-0 sm:border-r border-border/40 hover:bg-muted/5 transition-colors duration-300">
                 <span className="text-[10px] font-medium uppercase tracking-wider text-muted-foreground/60 mb-5 select-none">
                   Slide Motion Button
                 </span>
                 <SlideButton />
               </div>
-              <div className="bg-background/40 p-8 sm:p-12 flex flex-col items-center justify-center min-h-[200px] hover:bg-muted/5 transition-colors duration-300">
+              <div className="bg-background/40 p-6 sm:p-12 flex flex-col items-center justify-center min-h-[200px] hover:bg-muted/5 transition-colors duration-300">
                 <span className="text-[10px] font-medium uppercase tracking-wider text-muted-foreground/60 mb-5 select-none">
                   Magnetic Cursor Button
                 </span>
@@ -281,13 +281,13 @@ export default function Docs() {
           )}
 
           {activeTab === "slider" && (
-            <div className="border border-border/40 rounded-xl overflow-hidden bg-background p-8 sm:p-12 flex items-center justify-center min-h-[240px] hover:bg-muted/5 transition-colors duration-300">
+            <div className="border border-border/40 rounded-xl overflow-hidden bg-background p-6 sm:p-12 flex items-center justify-center min-h-[240px] hover:bg-muted/5 transition-colors duration-300">
               <LiquidTabs />
             </div>
           )}
 
           {activeTab === "loader" && (
-            <div className="border border-border/40 rounded-xl overflow-hidden bg-background p-8 sm:p-12 flex items-center justify-center min-h-[240px] hover:bg-muted/5 transition-colors duration-300">
+            <div className="border border-border/40 rounded-xl overflow-hidden bg-background p-6 sm:p-12 flex items-center justify-center min-h-[240px] hover:bg-muted/5 transition-colors duration-300">
               <LoaderEffectShowcase />
             </div>
           )}

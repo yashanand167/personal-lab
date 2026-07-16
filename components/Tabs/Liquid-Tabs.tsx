@@ -58,7 +58,7 @@ export default function LiquidTabs() {
 
 const GooeySVGFilter = () => {
     return (
-        <svg className="absolute w-0 h-0" xmlns="http://www.w3.org/2000/svg" version="1.1">
+        <svg className="pointer-events-none fixed w-0 h-0" xmlns="http://www.w3.org/2000/svg" version="1.1">
             <defs>
                 <filter id="gooey">
                     <feGaussianBlur in="SourceGraphic" stdDeviation="6" result="blur" />

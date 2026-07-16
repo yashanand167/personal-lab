@@ -7,6 +7,7 @@ import DottedCircleLoading from "@/components/Interactions/Loadings/dotted-circl
 import DottedTrapezoid from "@/components/Interactions/Loadings/dotted-trapezoid"
 import { Loader2 } from "lucide-react"
 import { motion } from "motion/react"
+import Inifinity from "@/components/Interactions/Loadings/infinity"
 
 export default function InteractionPage() {
   return (
@@ -75,6 +76,10 @@ export default function InteractionPage() {
             <div className="flex flex-col items-center justify-center p-12 h-48 relative">
               <DottedTrapezoid />
               <span className="absolute bottom-3 text-[10px] uppercase tracking-wider text-muted-foreground font-mono">Dotted Trapezoid</span>
+            </div>
+            <div className="flex flex-col items-center justify-center p-12 border-b md:border-b-0 md:border-r border-dotted border-border h-48 relative">
+              <Inifinity />
+              <span className="absolute bottom-3 text-[10px] uppercase tracking-wider text-muted-foreground font-mono">Infinity</span>
             </div>
           </div>
         </main>
