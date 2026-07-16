@@ -9,6 +9,7 @@ import LiquidTabs from "@/components/Tabs/Liquid-Tabs"
 import { LoaderEffectShowcase } from "@/components/Effects/LoaderEffect"
 import { ChefHat, LayoutGrid, Play } from "lucide-react"
 import Link from "next/link"
+import SubmitCard from "@/components/Cards/SubmitCard"
 
 const user1Data: User = {
   firstName: "Yash",
@@ -91,9 +92,14 @@ export default function Showcase() {
               </div>
             </div>
 
-            {/* Column 2: Liquid Tabs */}
-            <div className="bg-background p-6 sm:p-10 flex items-center justify-center min-h-[280px] border-b border-border/40 md:border-b-0 md:border-r border-border/40">
-              <LiquidTabs />
+            {/* Column 2: Liquid Tabs & Submit Card */}
+            <div className="flex flex-col border-b border-border/40 md:border-b-0 md:border-r border-border/40">
+              <div className="bg-background p-6 sm:p-10 flex items-center justify-center min-h-[280px] flex-1 border-b border-border/40">
+                <LiquidTabs />
+              </div>
+              <div className="bg-background p-10 flex items-center justify-center flex-1">
+                <SubmitCard />
+              </div>
             </div>
 
             {/* Column 3: UI with Loader Effect */}
@@ -104,10 +110,10 @@ export default function Showcase() {
 
           {/* Row 2: User Cards (Full Width layout with 3 columns on larger screens) */}
           <div className="w-full grid grid-cols-1 md:grid-cols-3 bg-background">
-            <div className="bg-background p-10 flex items-center justify-center">
+            <div className="bg-background p-10 flex items-center justify-center border-b md:border-b-0 md:border-r border-border/40">
               <UserCard user={user1Data} />
             </div>
-            <div className="bg-background p-10 flex items-center justify-center">
+            <div className="bg-background p-10 flex items-center justify-center border-b md:border-b-0 md:border-r border-border/40">
               <UserCard user={user2Data} />
             </div>
             <div className="bg-background p-10 flex items-center justify-center">
